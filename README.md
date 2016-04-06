@@ -1,4 +1,4 @@
-##Quick Chat App Socket IO
+#Quick Chat App Socket IO
 
 #Features Include
 
