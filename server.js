@@ -6,12 +6,17 @@ var ejs = require("ejs");
 
 
 
+
 // Set the view directory to /views
 
 app.set('view engine', 'ejs');
+app.use(require('./controllers'))
 
 
 io.on('connection', function(client){
+
+  var clients = io.sockets.clients();
+  console.log(clients.server.eio.clients)
 
   console.log('Client connected...');
 
