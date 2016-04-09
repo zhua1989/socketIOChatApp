@@ -1,9 +1,14 @@
+
+//Dependencies
 var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 var ejs = require("ejs");
-
+// var file = "test.db";
+// var exists = fs.existsSync(file);
+// var sqlite3 = require("sqlite3").verbose();
+// var db = new sqlite3.Database(file);
 
 
 

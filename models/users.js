@@ -1,1 +1,9 @@
-var db = new sqlite3.Database('topics.db');
+
+
+exports.create = function(name, cb) {
+  var user = {
+    name: name
+  }
+
+  db.save(user, cb)
+}
