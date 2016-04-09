@@ -65,7 +65,7 @@ socket.on('connect', function(data){
 
 socket.on('join', function(name){
   $('#status').text(name + ' has joined the chat room');
-  $('#users').append($('<li>').text(name + ' is online'))
+  $('#users').append($('<li class="user">').text(name + ' is online'))
 });
 
 socket.on('chat message', function(msg, nickname){
@@ -75,7 +75,13 @@ socket.on('chat message', function(msg, nickname){
 socket.on('disconnect', function(name){
   console.log(name)
   $('#status').append($('<h4>').text(name));
+  var updatedWord = name.replace(" has disconnected", '');
+  var listUsers = $("#users li");
+  listUsers.each(function(idx, li) {
+    li.remove();
+  });
 
+ 
 })
 
 
