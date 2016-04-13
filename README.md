@@ -6,3 +6,5 @@
 - Messages will display the nickname
 - User will be notified when someone disconnects from the server
 - User will be notified when a new user connects
+- User will be notified when someone disconnects
+- User will see list of names of people connected
