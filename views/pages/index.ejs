@@ -26,17 +26,19 @@
   
 </div>
 
+<div id="users-div">
+  <ul id="users">
+    
+  </ul>
+</div> 
+
 <div id="chat-div">
   <ul id="messages">
     
   </ul>
 </div>
 
-<div id="users-div">
-  <ul id="users">
-    
-  </ul>
-</div>  
+ 
 
 
     <form action="">
@@ -74,15 +76,16 @@ socket.on('chat message', function(msg, nickname){
 });
 
 socket.on('disconnect', function(name){
-  console.log(name)
   $('#status').append($('<h4>').text(name));
   var updatedWord = name.replace(" has disconnected", '');
+  console.log(updatedWord + typeof(updatedWord));
   var listUsers = $("#users li");
-  listUsers.each(function(idx, li) {
-    li.remove();
+  listUsers.each(function(index, element) {
+    if($(this).text().indexOf(updatedWord) !== -1){
+      $(this).remove();
+      console.log('successfully removed li element');
+    }
   });
-
- 
 })
 
 
